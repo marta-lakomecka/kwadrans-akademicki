@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dirett Menu</title>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => lucide.createIcons());
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+  :root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --muted: #888888;
+    --accent: #f5a623;
+    --button-bg: #f5f5f5;
+    --button-active: #1a1a1a;
+    --button-active-text: #ffffff;
+  }
+  .menu-wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    padding: 48px 32px;
+    border-radius: 24px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.05);
+    color: var(--text);
+  }
+  .lang-switch {
+    text-align: right;
+    margin-bottom: 32px;
+  }
+  .lang-switch button {
+    background-color: var(--button-bg);
+    color: var(--text);
+    border: none;
+    padding: 8px 16px;
+    margin-left: 8px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .lang-switch button.active {
+    background-color: var(--button-active);
+    color: var(--button-active-text);
+  }
+  .menu h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .menu i[data-lucide] {
+    width: 22px;
+    height: 22px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .menu p {
+    margin: 8px 0;
+    font-size: 16px;
+  }
+  .menu ul {
+    padding-left: 1.2em;
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+  .menu li {
+    font-size: 16px;
+    margin: 4px 0;
+  }
+  .menu em {
+    font-style: normal;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .hidden {
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  @media (max-width: 600px) {
+    .menu-wrapper {
+      padding: 32px 20px;
+    }
+    .lang-switch {
+      text-align: center;
+    }
+    .lang-switch button {
+      margin: 6px 4px;
+    }
+  }
+
+  .logo-container {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .logo-container img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 600px) {
+    .logo-container img {
+      max-width: 320px;
+    }
+  }
+
+
+  .hero-section {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 16px;
+  }
+
+  .hero-section h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+
+  .hero-section p {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    .hero-section h1 {
+      font-size: 22px;
+    }
+
+    .hero-section p {
+      font-size: 15px;
+    }
+  }
+
+
+
+  .daily-menu-section {
+    text-align: center;
+    margin: 40px 0 24px;
+  }
+
+  .daily-menu-section h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  @media (max-width: 600px) {
+    .daily-menu-section h2 {
+      font-size: 18px;
+    }
+  }
+
+
+  .static-offer-heading {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 48px;
+    margin-bottom: 24px;
+    font-weight: 600;
+  }
+
+
+  .static-offer-heading {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 48px 0 24px;
+    color: var(--text);
+  }
+
+
+  .menu-separator {
+    margin: 48px auto 32px;
+    border-top: 2px solid #eee;
+    width: 60%;
+  }
+
+
+  .menu-separator {
+    margin: 48px auto 32px;
+    border-top: 3px solid #ccc;
+    width: 80%;
+  }
+
+
+  .menu-separator {
+    margin: 48px auto 32px;
+    border-top: 3px dashed #999;
+    width: 70%;
+  }
+
+
+  .menu-separator-text {
+    text-align: center;
+    margin: 48px auto 32px;
+    font-size: 24px;
+    color: #bbb;
+    letter-spacing: 6px;
+  }
+
+
+  .menu-separator-text {
+    text-align: center;
+    margin: 48px auto 32px;
+    font-size: 24px;
+    color: #999;
+    letter-spacing: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="logo-container">
+<img alt="Kwadrans Akademicki - logo" src="https://dirett-catering.com.pl/wp-content/uploads/2025/04/kwadrans-akademicki5.jpg"/>
+</div>
+<div class="hero-section">
+<h1>Kwadrans Akademicki – pysznie między wykładami</h1>
+<p>Bufet na uczelni z codziennym menu śniadaniowym i obiadowym.<br/>
+  Na miejscu, na wynos, zawsze świeżo.</p>
+</div>
+
+
+<div class="menu-wrapper">
+<div class="lang-switch">
+<button class="active" id="btn-pl" onclick="switchLang('pl')">PL</button>
+<button id="btn-en" onclick="switchLang('en')">EN</button>
+</div>
+<div class="menu" id="menu-pl">
+<h2><i data-lucide="utensils"></i> Menu na dzisiaj – 3 kwietnia 2025</h2>
+<ul>
+<li>Barszcz ukraiński</li>
+<li>Makaron ze szpinakiem i kurczakiem</li>
+<li>Kasza z warzywami i falafelem</li>
+</ul><div class="menu-separator-text">⋯⋯⋯</div>
+
+<h2 class="static-offer-heading">Stała oferta</h2>
+
+
+
+
+
+<h2><i data-lucide="croissant"></i> Śniadania</h2>
+<p><strong>Kanapki</strong> – 7 zł<br/>(z żółtym serem, szynką lub twarożkiem)</p>
+<p><strong>Kanapki specjalne</strong> – 10 zł</p>
+<ul><li>pasztet (produkcja własna)</li><li>pieczony schab</li><li>2 kotleciki z indyka</li><li>pasta z tuńczyka</li></ul>
+<p>Granola z jogurtem i dipem wiśniowym – 8 zł</p>
+<p>Musli z jogurtem, żurawiną i miodem – 8 zł</p>
+<p>Ciasto domowe – 7 zł</p>
+<p>Drożdżówka – 7 zł</p>
+<h2><i data-lucide="flame"></i> Dania ciepłe</h2>
+<p><strong>Jajecznica z pieczywem</strong></p>
+<p>Na maśle:</p>
+<ul><li>z 2 jaj – 9 zł</li><li>z 3 jaj – 11 zł</li></ul>
+<p>Na bekonie:</p>
+<ul><li>z 2 jaj – 11 zł</li><li>z 3 jaj – 13 zł</li></ul>
+<p><strong>Parówki z pieczywem i sosem</strong></p>
+<ul><li>2 szt. – 8 zł</li><li>3 szt. – 10 zł</li></ul>
+<h2><i data-lucide="cake"></i> Desery</h2>
+<ul><li>Chia z mango – 9 zł</li><li>Budyń – 5 zł</li></ul>
+<h2><i data-lucide="coffee"></i> Napoje</h2>
+<ul>
+<li>Espresso – 8 zł</li>
+<li>Doppio – 12 zł</li>
+<li>Kawa – 8 zł</li>
+<li>Cappuccino – 12 zł</li>
+<li>Latte – 14 zł<br/><em>Smaki: orzech, czekolada, cynamon, wanilia, karmel<br/>(Dodatek smakowy +2 zł)</em></li>
+<li>Herbata – 4 zł</li>
+<li>Gorąca czekolada – 10 zł</li>
+<li>Kompot – 5 zł</li>
+</ul>
+<h2><i data-lucide="cup-soda"></i> Koktajle i Smoothie – 8 zł</h2>
+<ul><li>Koktajl truskawkowy</li><li>Smoothie porzeczkowo-bananowe</li><li>Smoothie jarmużowo-ananasowe</li><li>Smoothie mango</li></ul>
+</div>
+<div class="menu hidden" id="menu-en">
+<h2><i data-lucide="utensils"></i> Today's Menu – 3 kwietnia 2025</h2>
+<ul>
+<li>Ukrainian borscht</li>
+<li>Pasta with spinach and chicken</li>
+<li>Groats with vegetables and falafel</li>
+</ul><div class="menu-separator-text">⋯⋯⋯</div>
+
+<h2 class="static-offer-heading">Regular Offer</h2>
+
+
+
+
+
+<h2><i data-lucide="croissant"></i> Breakfast</h2>
+<p><strong>Sandwiches</strong> – 7 PLN<br/>(with sliced cheese, ham or cottage cheese)</p>
+<p><strong>Special sandwiches</strong> – 10 PLN</p>
+
+<p>Granola with yogurt and cherry dip – 8 PLN</p>
+<p>Muesli with yogurt, cranberries and honey – 8 PLN</p>
+<p>Homemade cake – 7 PLN</p>
+<p>Yeast bun – 7 PLN</p>
+<h2><i data-lucide="flame"></i> Hot Dishes</h2>
+<p><strong>Scrambled eggs with bread</strong></p>
+<p>With butter:</p>
+<ul><li>2 eggs – 9 PLN</li><li>3 eggs – 11 PLN</li></ul>
+<p>With bacon:</p>
+<ul><li>2 eggs – 11 PLN</li><li>3 eggs – 13 PLN</li></ul>
+<p><strong>Sausages with bread and sauce</strong></p>
+<ul><li>2 pcs – 8 PLN</li><li>3 pcs – 10 PLN</li></ul>
+<h2><i data-lucide="cake"></i> Desserts</h2>
+<ul><li>Chia with mango – 9 PLN</li><li>Pudding – 5 PLN</li></ul>
+<h2><i data-lucide="coffee"></i> Drinks</h2>
+<ul>
+<li>Espresso – 8 PLN</li>
+<li>Doppio – 12 PLN</li>
+<li>Coffee – 8 PLN</li>
+<li>Cappuccino – 12 PLN</li>
+<li>Latte – 14 PLN<br/><em>Flavors: hazelnut, chocolate, cinnamon, vanilla, caramel<br/>(Flavor add-on +2 PLN)</em></li>
+<li>Tea – 4 PLN</li>
+<li>Hot chocolate – 10 PLN</li>
+<li>Fruit compote – 5 PLN</li>
+</ul>
+<h2><i data-lucide="cup-soda"></i> Smoothies &amp; Shakes – 8 PLN</h2>
+<ul><li>Strawberry shake</li><li>Blackcurrant-banana smoothie</li><li>Kale-pineapple smoothie</li><li>Mango smoothie</li></ul>
+</div>
+</div>
+<script>
+  function switchLang(lang) {
+    const pl = document.getElementById("menu-pl");
+    const en = document.getElementById("menu-en");
+    const btnPL = document.getElementById("btn-pl");
+    const btnEN = document.getElementById("btn-en");
+
+    if (lang === "pl") {
+      pl.classList.remove("hidden");
+      en.classList.add("hidden");
+      btnPL.classList.add("active");
+      btnEN.classList.remove("active");
+    } else {
+      pl.classList.add("hidden");
+      en.classList.remove("hidden");
+      btnEN.classList.add("active");
+      btnPL.classList.remove("active");
+    }
+  }
+</script>
+</body>
+</html>
